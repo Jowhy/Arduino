@@ -78,7 +78,7 @@ void loop() {
   
   Serial.print("tick");
 
-  goForwardOneFoot(1);
+  goForwardOneFoot(1); // going forward
   
   Serial.print("tock");
 
