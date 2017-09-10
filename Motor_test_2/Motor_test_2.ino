@@ -12,7 +12,11 @@ void setup() {
   MotorShield.begin();
 }
 
-void goForward(float feet) {
+void wait(int seconds) {
+  delay(seconds*1000);
+}
+
+void goForward(float seconds) {
   uint8_t on = 255;
   uint8_t off = 0;
   backLeft->run(BACKWARD);
@@ -23,14 +27,14 @@ void goForward(float feet) {
   backRight->setSpeed(on);
   frontLeft->setSpeed(on);
   frontRight->setSpeed(on);
-  delay(feet*654.5454);
+  delay(seconds*1000);
   backLeft->setSpeed(off);
   backRight->setSpeed(off);
   frontLeft->setSpeed(off);
   frontRight->setSpeed(off);
 }
 
-void goBackward(float feet) {
+void goBackward(float seconds) {
   uint8_t on = 255;
   uint8_t off = 0;
   backLeft->run(FORWARD);
@@ -41,7 +45,7 @@ void goBackward(float feet) {
   backRight->setSpeed(on);
   frontLeft->setSpeed(on);
   frontRight->setSpeed(on);
-  delay(feet*654.5454);
+  delay(seconds*1000);
   backLeft->setSpeed(off);
   backRight->setSpeed(off);
   frontLeft->setSpeed(off);
@@ -94,7 +98,7 @@ void rotateLeft(float seconds) {
   backRight->run(FORWARD);
   frontLeft->run(FORWARD);
   frontRight->run(FORWARD);
-  backLeft->setSpeed(off);
+  backLeft->setSpeed(on);
   frontLeft->setSpeed(off);
   backRight->setSpeed(on);
   frontRight->setSpeed(on);
@@ -115,7 +119,7 @@ void rotateRight(float seconds) {
   frontRight->run(BACKWARD);
   backLeft->setSpeed(on);
   frontLeft->setSpeed(on);
-  backRight->setSpeed(off);
+  backRight->setSpeed(on);
   frontRight->setSpeed(off);
   delay(seconds*1000);
   backLeft->setSpeed(off);
@@ -125,5 +129,12 @@ void rotateRight(float seconds) {
 }
 
 void loop() {
-  
+  turnRight(1.5);
+  wait(2);
+  turnLeft(1.5);
+  wait(2);
+  rotateRight(1.5);
+  wait(2);
+  rotateLeft(1.5);
+  wait(2);
 }
