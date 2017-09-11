@@ -26,9 +26,9 @@ void loop() {
   turnCamera(0, 0);
   delay(1000);
   
-  turnCamera(0, 90);
+  turnCamera(90, 90);
   delay(1000);
   
-  turnCamera(0, -90);
+  turnCamera(-90, -90);
   delay(1000);
 }
