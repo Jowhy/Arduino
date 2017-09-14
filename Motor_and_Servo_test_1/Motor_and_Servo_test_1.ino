@@ -18,7 +18,33 @@ void setup() {
 }
 
 void loop() {
+  turnRight(1.5);
+  delay(300);
   
+  turnCamera(40, 40);
+  delay(300);
+  turnCamera(40, -40);
+  delay(300);
+  turnCamera(-40, -40);
+  delay(300);
+  turnCamera(-40, 40);
+  delay(300);
+  turnCamera(0, 0);
+  delay(300);
+  
+  turnLeft(1.5);
+  delay(300);
+  
+  turnCamera(40, 40);
+  delay(300);
+  turnCamera(40, -40);
+  delay(300);
+  turnCamera(-40, -40);
+  delay(300);
+  turnCamera(-40, 40);
+  delay(300);
+  turnCamera(0, 0);
+  delay(300);
 }
 
 void wait(int seconds) {

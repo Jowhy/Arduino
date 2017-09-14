@@ -19,15 +19,15 @@ void setup() {
 }
 
 void loop() {
-  for (int i = -80; i <= 80; i++) {
-    turnCamera(i, 0);
+  for (int i = -30; i <= 30; i++) {
+    turnCamera(i, i);
     delay(25);
   }
-  delay(100);
+  delay(80);
   
-  for (int i = 80; i >= -80; i--) {
-    turnCamera(i, 0);
+  for (int i = 30; i >= -30; i--) {
+    turnCamera(i, i);
     delay(25);
   }
-  delay(100);
+  delay(80);
 }
